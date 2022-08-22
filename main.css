@@ -26,10 +26,8 @@ body {
   justify-content: space-between;
   align-items: center;
 }
-.header .logo > a {
-  text-decoration: none;
-  color: white;
-  text-transform: uppercase;
+.header .logo {
+  margin-left: 40px;
 }
 
 .nav__ul {
@@ -63,7 +61,7 @@ body {
   background-size: 23px;
 }
 .nav li:hover {
-  background-color: rgba(255, 255, 255, 0.45);
+  background-color: rgba(190, 190, 190, 0.83);
   border-radius: 9px;
 }
 .nav__item {
@@ -76,6 +74,7 @@ body {
 }
 
 .hero {
+  margin-top: 50px;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -84,10 +83,10 @@ body {
   flex-basis: 45%;
 }
 .hero__title {
-  font-size: 72px;
+  font-size: 64px;
   line-height: 82px;
   letter-spacing: 2px;
-  margin-bottom: 30px;
+  margin-bottom: 50px;
 }
 .hero__descr {
   font-size: 22px;
