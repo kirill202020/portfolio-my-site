@@ -6,6 +6,7 @@
 }
 
 body {
+  margin: 0 auto;
   max-width: 1560px;
   width: 100%;
   background: #8e8e93;
@@ -27,6 +28,9 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+.header__burger {
+  display: none;
 }
 .header .logo {
   margin-left: 40px;
@@ -103,9 +107,10 @@ body {
   text-transform: uppercase;
   cursor: pointer;
 }
-.hero__img {
+.hero .my-img {
   width: 371px;
-  background: #054244;
+  background: url("./img/me.png") center bottom no-repeat;
+  background-size: cover;
 }
 
 .hero__img {
@@ -181,6 +186,7 @@ body {
 .project {
   display: flex;
   margin-top: 100px;
+  gap: 5%;
 }
 .project-first {
   margin-top: 70px;
@@ -193,6 +199,7 @@ body {
   font-size: 54px;
   line-height: 59px;
   letter-spacing: 1px;
+  margin-bottom: 10px;
 }
 .project__left-side span {
   font-weight: 700;
@@ -201,11 +208,10 @@ body {
   letter-spacing: 1px;
 }
 .project__right-side {
-  flex-basis: 45%;
+  flex-basis: 65%;
 }
 .project__right-side img {
-  width: 950px;
-  height: 600px;
+  width: 100%;
   background: #000;
   margin-bottom: 20px;
   border-radius: 16px;
@@ -266,6 +272,10 @@ body {
   border-radius: 8px;
   cursor: pointer;
 }
+.contact .contact__img {
+  height: 550px;
+  width: 180px;
+}
 
 .footer {
   display: flex;
@@ -290,4 +300,132 @@ body {
 .footer__links .footer__links__second-link {
   background: url(./img/icon-telegram.svg) no-repeat center left 0px;
   background-size: 38px;
+}
+
+@media screen and (max-width: 1100px) {
+  .card {
+    flex-basis: 30%;
+  }
+  .hero__img {
+    background-size: contain;
+    flex-basis: 50%;
+  }
+  .hero .my-img {
+    width: 75%;
+    background-size: contain;
+    background-position: center bottom 48%;
+  }
+}
+@media screen and (max-width: 992px) {
+  .hero__title {
+    font-size: 54px;
+    margin-bottom: 40px;
+  }
+  .hero__descr {
+    font-size: 22px;
+  }
+  .about-me span {
+    font-size: 18px;
+  }
+  .about-me h2 {
+    font-size: 35px;
+  }
+  .about-me .card h3 {
+    font-size: 20px;
+  }
+  .about-me .card p {
+    font-size: 14px;
+  }
+  .about-me .card li {
+    font-size: 12px;
+  }
+  .project__left-side h3 {
+    font-size: 41px;
+    line-height: 45px;
+  }
+  .contact__img {
+    display: none;
+  }
+  .footer p {
+    display: none;
+  }
+}
+@media screen and (max-width: 768px) {
+  .nav {
+    display: block;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    padding: 15px;
+    background: #000;
+    transform: translateX(100%);
+    transition: all 0.5s;
+  }
+  .nav__ul {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    max-width: 350px;
+    margin: 60px auto;
+  }
+  .nav li {
+    width: 100%;
+  }
+  .nav li:nth-child(1), .nav li:nth-child(2), .nav li:nth-child(3), .nav li:nth-child(4) {
+    background: none;
+  }
+  .nav a {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    font-size: 23px;
+  }
+  .nav.active {
+    transform: translateX(0);
+  }
+  .header__burger {
+    display: block;
+    position: relative;
+    width: 30px;
+    height: 20px;
+    transition: all 1s;
+  }
+  .header__burger::after, .header__burger::before {
+    content: "";
+    background: #fff;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    transition: all 1s;
+  }
+  .header__burger::before {
+    top: 0;
+  }
+  .header__burger::after {
+    bottom: 0;
+  }
+  .header__burger span {
+    background: #fff;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    top: 9px;
+  }
+  .header__burger.active span {
+    transform: scale(0);
+  }
+  .header__burger.active::after {
+    transform: rotate(45deg);
+    bottom: 9px;
+  }
+  .header__burger.active::before {
+    transform: rotate(-45deg);
+    top: 9px;
+  }
+  body.lock {
+    overflow: hidden;
+  }
 }/*# sourceMappingURL=main.css.map */
